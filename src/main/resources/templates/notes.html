@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table {
+            border: 1px solid grey;
+        }
+        th {
+            background-color: green;
+            color: white;
+            padding: 6px 8px;
+        }
+        td {
+            padding: 6px 8px;
+        }
+    </style>
 </head>
 <body>
-    List of notes
+    <h2> List of notes </h2>
+    <table id="note">
+        <tr>
+            <th>Tag</th>
+            <th>Note</th>
+        </tr>
+        <tr>
+            <td th:text="${note.tag}"></td>
+            <td style="border-left: 1px solid grey" th:text="${note.note}"></td>
+        </tr>
+    </table>
 </body>
 </html>
