@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <style>
+        table {
+            border: 1px solid grey;
+        }
+        th {
+            background-color: green;
+            color: white;
+            padding: 6px 8px;
+        }
+        td {
+            padding: 6px 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2> List of message </h2>
+    <table id="message">
+        <tr>
+            <th>Message</th>
+        </tr>
+        <tr th:object="${message}">
+            <td th:text="*{shown}"></td>
+            <td style="border-left: 1px solid grey" th:if="*{shown}" th:text="*{message}"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -15,4 +15,11 @@ public class TodoListController {
         return "notes";
     }
 
+    @GetMapping("/messages")
+    public String getMessages(Model model) {
+        AdminMessage message = new AdminMessage(false, "Hi everybody ...");
+        model.addAttribute("message", message);
+        return "messages";
+    }
+
 }
