@@ -20,6 +20,7 @@
 </head>
 <body>
     <h2> List of message </h2>
+    <p th:text="${message.shown} ? ${message.message} : 'Not allowed to see the message' "></p>
     <table id="message">
         <tr>
             <th>Message</th>

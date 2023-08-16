@@ -17,7 +17,7 @@ public class TodoListController {
 
     @GetMapping("/messages")
     public String getMessages(Model model) {
-        AdminMessage message = new AdminMessage(false, "Hi everybody ...");
+        AdminMessage message = new AdminMessage(true, "Hi everybody ...");
         model.addAttribute("message", message);
         return "messages";
     }
