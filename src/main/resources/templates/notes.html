@@ -25,9 +25,9 @@
             <th>Tag</th>
             <th>Note</th>
         </tr>
-        <tr th:object="${note}">
-            <td th:text="*{tag}"></td>
-            <td style="border-left: 1px solid grey" th:text="*{note}"></td>
+        <tr th:each="notee: ${notes}">
+            <td th:text="${notee.tag}"></td>
+            <td style="border-left: 1px solid grey" th:text="${notee.note}"></td>
         </tr>
     </table>
 </body>
