@@ -1,6 +1,7 @@
 package dev.ejiwen.todolist;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -11,13 +12,13 @@ import org.springframework.ui.Model;
 @Controller
 public class TodoListController {
 
-    List<Note> myNotes = new ArrayList<>();
+    List<Note> myNotes = Arrays.asList(
+            new Note("Java", "Learn java Spring boot"),
+            new Note("JavaScript", "Learn javaScript"),
+            new Note("PHP", "Learn PHP"));
 
     @GetMapping("/notes")
     public String getNotes(Model model) {
-        myNotes.add(new Note("Java", "Learn java Spring boot"));
-        myNotes.add(new Note("JavaScript", "Learn javaScript"));
-        myNotes.add(new Note("PHP", "Learn PHP"));
         model.addAttribute("notes", myNotes);
         return "notes";
     }
