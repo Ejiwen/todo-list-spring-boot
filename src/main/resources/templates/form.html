@@ -7,7 +7,7 @@
 </head>
 <body>
     <form method="post" th:object="${note}" th:action="@{/handleSubmit}">
-        <td>Tag: </td> <input type="text" name="note" th:field="*{note}" />
+       <td>Tag: </td> <input type="text" name="note" th:field="*{note}" />
        <td>New Note: </td> <input type="text" name="note" th:field="*{tag}" />
        <input type="submit" value="Add" />
     </form>
