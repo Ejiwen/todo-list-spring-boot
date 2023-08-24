@@ -6,16 +6,19 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 
 @Controller
 public class TodoListController {
 
-    List<Note> myNotes = Arrays.asList(
-            new Note("Java", "Learn java Spring boot"),
-            new Note("JavaScript", "Learn javaScript"),
-            new Note("PHP", "Learn PHP"));
+    List<Note> myNotes = new ArrayList<>();
+
+    @PostMapping("/handleSubmit")
+    public String submitNote(Note note) {
+        myNotes.add(note);
+        return "redirect:/notes";
+    }
 
     @GetMapping("/notes")
     public String getNotes(Model model) {
@@ -28,6 +31,12 @@ public class TodoListController {
         AdminMessage message = new AdminMessage(true, "Hi everybody ...");
         model.addAttribute("message", message);
         return "messages";
+    }
+
+    @GetMapping("/new-note")
+    public String newNote(Model model) {
+        model.addAttribute("note", new Note());
+        return "form";
     }
 
 }

@@ -4,6 +4,10 @@ public class Note {
     private String tag;
     private String note;
 
+    public Note() {
+
+    }
+
     public Note(String tag, String note) {
         this.tag = tag;
         this.note = note;
